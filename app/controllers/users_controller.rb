@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email))
     @user.save 
+    id = User.last[:id]
+    redirect_to user_path(id)
   end
 
   def edit
@@ -19,6 +21,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+
   end
 
 private
