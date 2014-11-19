@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
+gem 'factory_girl_rails'
+
 gem 'bootstrap-sass'
 
-gem 'rails_12factor'
+group :development, :test do
 
-gem 'rspec-rails', group: :development
+  gem 'rspec-rails', '~> 3.0.0'
+
+  gem 'shoulda-matchers', require: false
+end
 
 gem "paperclip", "~> 4.2"
 
@@ -55,3 +60,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
+end
