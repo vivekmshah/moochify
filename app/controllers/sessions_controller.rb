@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
       else
           flash.now.alert = "Email or password is invalid"
           render "new"
-          # redirect_to new_session_path
       end
   end
 

@@ -11,6 +11,25 @@
 </head>
 <body>
 
+ <div class="main">
+    <!-- SHOW STATUS OF LOG IN -->
+    <% if current_user %>
+
+      <p>Welcome, <%=current_user.first_name %>!</p> 
+
+      <!-- link_to 'Sign Out', logout_path, method: :delete -->
+
+      <!-- link_to 'Delete Account', user_path(current_user), {method: :delete, confirm: "Are you really really really sure bud?"} -->
+
+    <% else %>
+      <%=link_to 'Log in', login_path %>
+      <%=link_to 'Sign Up', signup_path %>
+    <% end %>
+  </div>
+
+
+
+
 <%= yield %>
 
 </body>
