@@ -1,5 +1,8 @@
 Moochify::Application.routes.draw do
 
+  get "orders/index"
+  get "orders/show"
+  get "orders/create"
   root 'home#show', as: :home
 
   get 'signup', to: 'users#new', as: 'signup'
