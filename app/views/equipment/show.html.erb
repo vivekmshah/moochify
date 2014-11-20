@@ -1,6 +1,17 @@
-<h1>Equipment Info</h1>
+<h1><%= @equipment.name %></h1>
 
-  <%= @equipment.name %><br>
-  <%= @equipment.current_daily_cost %><br>
-  <%= @equipment.description %><br>
-  <%= @equipment.availability %>
+<%= @equipment.current_daily_cost %><br>
+<%= @equipment.description %><br>
+<%= @equipment.availability %>
+
+<%= form_tag orders_path do %>
+
+  <%= date_field_tag :start_date, nil  %>
+  <%= date_field_tag :end_date, nil  %>
+  <%= hidden_field_tag :equipment_id, @equipment.id %>
+
+  <%= submit_tag "Place order" %>
+
+<% end %>
+
+

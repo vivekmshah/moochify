@@ -7,8 +7,7 @@ class EquipmentController < ApplicationController
   def create
     @equipment = current_user.equipment.new(equipment_params)
     @equipment.save
-    id = Equipment.last[:id]
-    redirect_to equipment_path(id)
+    redirect_to equipment_index_path
   end
 
   def edit
@@ -18,6 +17,7 @@ class EquipmentController < ApplicationController
   end
 
   def index
+    @equipment = Equipment.where(user_id: current_user)
   end
 
   def destroy

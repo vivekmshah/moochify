@@ -9,5 +9,7 @@ Moochify::Application.routes.draw do
   resources :users
   resources :equipment
   resources :sessions
+  resources :orders
+  resources :reviews
 
 end
