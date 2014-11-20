@@ -1,5 +1,6 @@
 <h1>Moochify home page</h1>
 
+<<<<<<< HEAD
 <div class="row">
   <div class="col-sm-3">
     <div class="input-group">
@@ -9,8 +10,8 @@
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-sm-3 -->
-</div><!-- /.row --><h1>Moochify home page</h1>
-
+</div><!-- /.row -->
+=======
 <h3>What do you want to mooch today?</h3>
 
 <%= form_tag equipment_index_path do %>
@@ -24,3 +25,4 @@
   <%= submit_tag "Search" %>
 
 <% end %>
+>>>>>>> master

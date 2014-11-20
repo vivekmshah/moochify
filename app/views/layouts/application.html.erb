@@ -58,11 +58,17 @@
 
  <div class="main">
     <!-- SHOW STATUS OF LOG IN -->
+
+    <%= link_to 'Moochify home page', home_path %>
+
     <% if current_user %>
 
-      <p>Welcome, <%=current_user.first_name %>!</p> 
+      Welcome, <%=current_user.first_name %>!
 
       <%= link_to 'Sign Out', logout_path, method: :delete %>
+
+      <%= link_to 'Add equipment', new_equipment_path %>    
+
 
       <!-- link_to 'Delete Account', user_path(current_user), {method: :delete, confirm: "Are you really really really sure bud?"} -->
 
@@ -70,6 +76,8 @@
       <%=link_to 'Log in', login_path %>
       <%=link_to 'Sign Up', signup_path %>
     <% end %>
+
+
   </div>
 
 
