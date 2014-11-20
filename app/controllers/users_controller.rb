@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation))
-    @user.save 
+    @user.save
+    session[:user_id] = @user.id
     id = User.last[:id]
     redirect_to user_path(id)
   end
