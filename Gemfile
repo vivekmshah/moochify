@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'faker', '~> 1.4.3'
+
 gem 'factory_girl_rails'
 
 gem 'bootstrap-sass'

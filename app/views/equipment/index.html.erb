@@ -2,6 +2,6 @@
 
 <% @equipment.each do |d| %>
 
-  <p><%= d.name %></p>
+  <p><%= d.name %>,<%= d.description %>,<%= d.availability %>,<%= number_to_currency(d.current_daily_cost) %></p>
 
 <% end %>
