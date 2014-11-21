@@ -5,12 +5,13 @@ class EquipmentController < ApplicationController
   end
 
   def create
-    @equipment = current_user.equipment.new(equipment_params)
-    @equipment.save
+    equipment = current_user.equipment.new(equipment_params)
+    equipment.save
     redirect_to equipment_index_path
   end
 
   def edit
+    @equipment = Equipment.find(params[:id])
   end
 
   def update
@@ -21,6 +22,10 @@ class EquipmentController < ApplicationController
   end
 
   def destroy
+    equipment = Equipment.find(params[:id])
+    equipment.destroy
+    redirect_to equipment_index_path
+
   end
 
   def show
