@@ -1,26 +1,28 @@
-<h1>Moochify home page</h1>
 
-<div class="row">
-  <div class="col-sm-3">
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Search</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-sm-3 -->
-</div><!-- /.row --><h1>Moochify home page</h1>
+<div class="homepage-header">
+  <h1>Use Your Neighbors </h1>
+</div>
 
-<h3>What do you want to mooch today?</h3>
 
-<%= form_tag equipment_index_path do %>
+<div class="jumbotron">
+  <div class="container">
 
-  <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
-  <%= text_field_tag :zip, nil, placeholder: "Zip" %>
+    <div class="mooch-header">
+      <h3>What do you want to mooch today?</h3>
+    </div>
 
-  <%= date_field_tag :start_date, nil  %>
-  <%= date_field_tag :end_date, nil  %>
 
-  <%= submit_tag "Search" %>
+      <%= form_tag equipment_index_path do %>
 
-<% end %>
+      <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
+      <%= text_field_tag :zip, nil, placeholder: "Zip" %>
+
+      <%= date_field_tag :start_date, nil  %>
+      <%= date_field_tag :end_date, nil  %>
+
+      <%= submit_tag "Search" %>
+
+    <% end %>
+  </div>
+</div>
+
