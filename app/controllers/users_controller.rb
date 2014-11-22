@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     id = User.last[:id]
-    redirect_to user_path(id)
+    redirect_to equipment_index_path
   end
 
   def edit
