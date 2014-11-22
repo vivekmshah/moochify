@@ -6,10 +6,10 @@ Moochify::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   delete 'logout', to: 'sessions#destroy', as: 'logout'
 
-  resources :users
+  resources :users, :except => [:index]
   resources :equipment
+  resources :orders, :only => [:index, :show, :create]
+
   resources :sessions
-  resources :orders
-  resources :reviews
 
 end
