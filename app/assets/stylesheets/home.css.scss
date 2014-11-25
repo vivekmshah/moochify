@@ -1,0 +1,57 @@
+.jumbotron {
+ 	background-color: #ffbb37;
+ 	text-align: center;
+ 	color: grey;
+ 	padding: 10%;
+ 	
+
+ }
+
+ .homepage-header {
+ 	text-align: center;
+ 	font-size: 1em;
+ 	margin: 5px;
+ 	border: 10px;
+ 	padding: 10px;
+ 	color: white;
+ }
+
+ .mooch-header, h3 {
+ 	font-size: 40px;
+ 	padding: 10px, 30px;
+ }
+
+ ///////// Form Fields //////////
+
+ #name {
+ 	margin: 1px;
+ 	height: 50px;
+ 	width: 300px;
+ 	padding: 10px;
+ 
+ }
+
+ #zip {
+ 	margin: 1px;
+ 	height: 50px;
+ 	width: 150px;
+ 	padding: 10px;
+ }
+
+ #start_date {
+ 	margin: 1px;
+ 	height: 50px;
+ 	width: 200px;
+ 	padding: 10px;
+ }
+
+ #end_date {
+ 	margin: 1px;
+ 	height: 50px;
+ 	width: 200px;
+ }
+
+ #submit {
+ 	height: 60px;
+ }
+
