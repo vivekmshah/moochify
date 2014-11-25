@@ -13,4 +13,6 @@ Moochify::Application.routes.draw do
   resources :sessions
   resources :results
 
+  get 'index', to: 'results#index', as: 'searchresults'
+
 end
