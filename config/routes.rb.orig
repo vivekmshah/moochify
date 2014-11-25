@@ -11,8 +11,11 @@ Moochify::Application.routes.draw do
   resources :orders, :only => [:index, :show, :create]
 
   resources :sessions
+<<<<<<< HEAD
+  resources :orders
+  resources :reviews
   resources :results
-
-  get 'index', to: 'results#index', as: 'searchresults'
+=======
+>>>>>>> master
 
 end
