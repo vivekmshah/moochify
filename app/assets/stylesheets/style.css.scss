@@ -1,0 +1,36 @@
+.content-wrapper {
+	height: 100%;
+	width: 100%;
+	background-color: orange;
+	position: absolute;
+	margin-top: -90px;
+	z-index: -1;
+}
+
+#map-canvas {
+	height: 88.5%;
+	width: 600px;
+	background-color: red;
+	float: left;
+	position: relative;
+	display: inline-block;
+	margin-top: 90px;
+  border-right: 4px solid #555;
+}
+
+#right-container {
+	height: 88.5%;
+	width: 840px;
+	background-color: green;
+	position: relative;
+	display: inline-block;
+	margin-top: 90px;	
+}
+
+#top-area {
+  background-color: white;
+	height: 300px;
+	width: 100%;
+	border-bottom: 4px solid #555;
+	margin-top: -19px;
+}
