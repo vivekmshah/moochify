@@ -12,4 +12,9 @@ Moochify::Application.routes.draw do
 
   resources :sessions
 
+  scope 'api', defaults: {format: :json} do
+    resources :equipment, only: [:index, :create, :update, :destroy]
+    resources :orders, only: [:index, :create, :update, :destroy]
+  end
+
 end
