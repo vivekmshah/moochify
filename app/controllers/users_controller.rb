@@ -9,13 +9,21 @@ class UsersController < ApplicationController
     @user.save
     session[:user_id] = @user.id
     id = User.last[:id]
-    redirect_to user_path(id)
+    redirect_to equipment_index_path
   end
 
-  def edit
+  def edit  
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path
+    else
+      render 'edit'
+    end
+    @user.save
   end
 
   def destroy
