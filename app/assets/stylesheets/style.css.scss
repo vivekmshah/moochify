@@ -1,7 +1,7 @@
 .content-wrapper {
 	height: 100%;
 	width: 100%;
-	background-color: orange;
+	background-color: blue;
 	position: absolute;
 	margin-top: -90px;
 	z-index: -1;
@@ -9,28 +9,58 @@
 
 #map-canvas {
 	height: 88.5%;
-	width: 600px;
-	background-color: red;
+	width: 39%;
 	float: left;
-	position: relative;
+	position: relative	;
 	display: inline-block;
 	margin-top: 90px;
-  border-right: 4px solid #555;
+    border-right: 4px solid grey;
 }
 
 #right-container {
 	height: 88.5%;
-	width: 840px;
-	background-color: green;
+	width: 61%;
+	background-color: #ffbb37;
 	position: relative;
 	display: inline-block;
 	margin-top: 90px;	
+	overflow-y: auto;
+	padding-bottom: 10px;
 }
 
-#top-area {
-  background-color: white;
-	height: 300px;
-	width: 100%;
-	border-bottom: 4px solid #555;
-	margin-top: -19px;
+.result {
+	width: 96%;
+	height: 120px;
+	display: inline-block;
+	float: left;
+	background-color: #e7e7e7;
+	margin-left: 1.5%;
+	margin-top: 15px;
+	border-radius: 5px;
+}
+
+.title {
+	font-size: 22px;
+	font-family: "Helvetica Neue";
+	padding-top: 5px;
+	padding-left: 7px;
+}
+
+.desc {
+	padding: 0 7px;
+}
+
+
+/* Media Queries */
+@media (max-width: 982px) {
+	#map-canvas {
+		width: 100%;
+		height: 300px;
+		border-right: none;
+	}
+
+	#right-container {
+		width: 100%;
+		margin-top: -20px;
+	}
 }
