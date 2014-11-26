@@ -1,16 +1,3 @@
-<div class="row">
-  <div class="col-sm-3">
-    <div class="input-group">
-      <input type="text" class="form-control">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Search</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-sm-3 -->
-</div><!-- /.row --><h1>Moochify home page</h1>
-
-<h3>What do you want to mooch today?</h3>
-
 <%= form_tag results_path do %>
 
 <div class="jumbotron">
@@ -25,23 +12,47 @@
       <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
       <%= text_field_tag :zip, nil, placeholder: "Zip" %>
       <%= date_field_tag :start_date, nil  %>
-      <%= date_field_tag :end_date, nil  %><br>
-      <%= submit_tag  "Search" %>
+      <%= date_field_tag :end_date, nil  %>
+      <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
     <% end %>
   </div>
 </div>
 
+<% end %>
 
 <div class="row">
-  <div class="col-sm-6 col-md-4">
+  <div class="col-sm-4">
     <div class="thumbnail">
-      <img data-src="holder.js/300x300" alt="...">
+      <img data-src="work.jpg" alt="...">
       <div class="caption">
-        <h3>Thumbnail label</h3>
+        <h3>Work</h3>
+        <p>Rent Tools</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-sm-4">
+    <div class="thumbnail">
+      <img data-src="play.jpg" alt="...">
+      <div class="caption">
+        <h3>Play</h3>
+        <p>Rent Tools</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-sm-4">
+    <div class="thumbnail">
+      <img data-src="entertainment.jpg" alt="...">
+      <div class="caption">
+        <h3>Entertainment</h3>
         <p>Rent Tools</p>
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
   </div>
 </div>
+
 
