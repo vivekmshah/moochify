@@ -26,7 +26,7 @@
  #name {
  	margin: 1px;
  	height: 50px;
- 	width: 300px;
+ 	width: 200px;
  	padding: 10px;
  
  }
@@ -34,24 +34,29 @@
  #zip {
  	margin: 1px;
  	height: 50px;
- 	width: 150px;
+ 	width: 100px;
  	padding: 10px;
  }
 
  #start_date {
  	margin: 1px;
  	height: 50px;
- 	width: 200px;
- 	padding: 10px;
+ 	width: 150px;
+ 	padding: 5px;
  }
 
  #end_date {
  	margin: 1px;
  	height: 50px;
- 	width: 200px;
+ 	width: 150px;
+ 	padding: 5px;
  }
 
  #submit {
  	height: 60px;
  }
+
+.caption h3 {
+	text-align: center;
+}
 
