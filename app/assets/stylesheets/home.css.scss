@@ -1,5 +1,8 @@
 .jumbotron {
- 	background-color: #ffbb37;
+ 	// background-color: #ffbb37;
+ 	background-image: url('dog.jpg');
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
  	text-align: center;
  	color: grey;
  	padding: 10%;
@@ -17,7 +20,7 @@
  }
 
  .mooch-header, h3 {
- 	font-size: 40px;
+ 	font-size: 40px;	
  	padding: 10px, 30px;
  }
 
@@ -26,7 +29,7 @@
  #name {
  	margin: 1px;
  	height: 50px;
- 	width: 300px;
+ 	width: 200px;
  	padding: 10px;
  
  }
@@ -34,24 +37,29 @@
  #zip {
  	margin: 1px;
  	height: 50px;
- 	width: 150px;
+ 	width: 100px;
  	padding: 10px;
  }
 
  #start_date {
  	margin: 1px;
  	height: 50px;
- 	width: 200px;
- 	padding: 10px;
+ 	width: 150px;
+ 	padding: 5px;
  }
 
  #end_date {
  	margin: 1px;
  	height: 50px;
- 	width: 200px;
+ 	width: 150px;
+ 	padding: 5px;
  }
 
  #submit {
  	height: 60px;
  }
+
+.caption h3 {
+	text-align: center;
+}
 

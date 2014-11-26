@@ -11,9 +11,9 @@ Moochify::Application.routes.draw do
   resources :orders, :only => [:index, :show, :create]
 
   resources :sessions
-  resources :results
+  resources :results, :except => [:create] 
 
-  get 'index', to: 'results#index', as: 'searchresults'
+  post 'results', to: 'results#index'
 
   scope 'api', defaults: {format: :json} do
     resources :equipment, only: [:index, :create, :update, :destroy]
