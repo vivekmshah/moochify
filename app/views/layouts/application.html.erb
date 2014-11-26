@@ -29,16 +29,13 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left", role: "search") do %>
-        <div class="form-group">
+      <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left") do %>
           <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
           <%= text_field_tag :zip, nil, placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
           <%= date_field_tag :end_date, nil  %>
           <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
-        </div>
       <% end %>
-
 
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
