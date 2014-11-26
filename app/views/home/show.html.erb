@@ -1,4 +1,3 @@
-<%= form_tag results_path do %>
 
 <div class="jumbotron">
   <div class="container">
@@ -8,17 +7,15 @@
     <div class="mooch-header">
       <h3>What do you want to mooch today?</h3>
     </div>
-      <%= form_tag equipment_index_path do %>
-      <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
-      <%= text_field_tag :zip, nil, placeholder: "Zip" %>
-      <%= date_field_tag :start_date, nil  %>
-      <%= date_field_tag :end_date, nil  %>
-      <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
-    <% end %>
+      <%= form_tag results_path do %>
+        <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
+        <%= text_field_tag :zip, nil, placeholder: "Zip" %>
+        <%= date_field_tag :start_date, nil  %>
+        <%= date_field_tag :end_date, nil  %>
+        <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
+      <% end %>
   </div>
 </div>
-
-<% end %>
 
 <div class="row">
   <div class="col-sm-4">
