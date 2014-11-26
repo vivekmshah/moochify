@@ -1,12 +1,8 @@
 class ResultsController < ApplicationController
 
   def index
-	  # if params[:search]
-	  #   @results = Result.search(params[:search]).order("created_at DESC")
-	  # else
-	  #   @results = Result.all.order('created_at DESC')
-	  # end
-    @results = Result.all
+    @results = Equipment.where('name LIKE ?', "%#{params[:name]}%")
+    # raise @results.inspect
   end
 
   def create

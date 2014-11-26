@@ -10,12 +10,22 @@
         <div id="search">
         </div>
 	  </div>
+
 	  <div id="bottom-area">
         <div id="search_results">
+            <% @results.each do |r| %>
+                <div>   
+                    <%= r.name %>
+                    <%= r.description %>
+                </div>
+            <% end %> 
         </div>
 	  </div>
+
 	</div>
 </div>
+
+
 <script>
 
 var geocoder;
