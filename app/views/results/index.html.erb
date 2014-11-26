@@ -2,26 +2,14 @@
 	<div id="map-canvas">
 	</div>
 	<div id="right-container">
-	  <div id="top-area">
-	    <h1>Search here</h1>
-	    <input type="text" placeholder="equipment" id="equipment"><br>
-	    <input type="text" placeholder="address" id="address"><br>
-	    <input type="button" value="Search" id="search">
-        <div id="search">
-        </div>
-	  </div>
-
-	  <div id="bottom-area">
-        <div id="search_results">
+        <div class="search-results">
             <% @results.each do |r| %>
-                <div>   
-                    <%= r.name %>
-                    <%= r.description %>
+                <div class="result">   
+                    <div class="title"><%= r.name %></div>
+                    <div class="desc"><%= r.description %></div>
                 </div>
             <% end %> 
         </div>
-	  </div>
-
 	</div>
 </div>
 
