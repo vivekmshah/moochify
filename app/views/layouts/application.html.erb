@@ -29,7 +29,7 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left") do %>
+      <%= form_tag({controller: "results", action: "index"}, {class: "navbar-form navbar-left form-inline"}) do %>
           <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
           <%= text_field_tag :zip, nil, placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
@@ -45,16 +45,20 @@
         <% end %>
         <li class="dropdown">
 
+          <% if current_user %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
+          <% end %>
+            
             <% if current_user %>
               <%= current_user.first_name %> <%= current_user.last_name %>
               <span class="caret"></span>
             <% else %>
               <%= link_to 'Sign Up', signup_path %></a>
             <% end %>
-            
+
+          <% if current_user %>            
           </a>
+          <% end %>
 
           <ul class="dropdown-menu" role="menu">
 
