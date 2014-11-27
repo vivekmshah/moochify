@@ -1,3 +1,41 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.signup {
+	width: 50%;
+	height: 490px;
+	background-color: #ffbb37;
+	margin: 0 auto;
+}
+
+.signup h1 {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.new_user {
+	margin: 0 auto;
+	width: 40%;
+}
+
+.new_user label {
+	margin-top: 5px;
+}
+
+.new_user input {
+  width: 100%;
+  height: 35px;
+  border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.new_user .btn {
+	margin-top: 10px;
+	width: 90%;
+	position: relative;
+	left: 4%;
+	height: 50px;
+}
