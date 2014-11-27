@@ -55,7 +55,7 @@ function initialize() {
     geocoder = new google.maps.Geocoder();
     
     // Set focus to address field
-    document.getElementById('address').focus();
+    document.getElementById("zip").focus();
 
     // Bind click event listener for search button that renders a zip code view
     document.getElementById("search").addEventListener('click', codeAddress, false);
@@ -64,7 +64,7 @@ function initialize() {
     document.getElementById("search").addEventListener('click', performSearch, false);
 
     // Bind key-up event listener for address field
-    document.getElementById("address").addEventListener('keyup', function (event) {
+    document.getElementById("zip").addEventListener('keyup', function (event) {
 
         // Check the event key code
         if (event.keyCode == 13) {
