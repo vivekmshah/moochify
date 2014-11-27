@@ -11,74 +11,60 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
-  <div class="container-fluid">
+  <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">moochify</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left", role: "search") do %>
 
-    <div class="navbar-header">
-
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <a class="navbar-brand" href="/">moochify</a>
-
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left", role: "search") do %>
         <div class="form-group">
           <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
           <%= text_field_tag :zip, nil, placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
           <%= date_field_tag :end_date, nil  %>
           <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
-        </div>
-      <% end %>
 
-
-      <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
-          <li><%= link_to 'Add equipment', new_equipment_path %></li>
-        <% else %>
-          <li><%=link_to 'Log in', login_path %></li>
-        <% end %>
-        <li class="dropdown">
-
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
+          <% end %>
+          <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <%= current_user.first_name %> <%= current_user.last_name %>
-              <span class="caret"></span>
+            <li><%= link_to 'Add equipment', new_equipment_path %></li>
             <% else %>
-              <%= link_to 'Sign Up', signup_path %></a>
+            <li><%=link_to 'Log in', login_path %></li>
             <% end %>
-            
-          </a>
+            <li class="dropdown">
 
-          <ul class="dropdown-menu" role="menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <% if current_user %>
+                <%= current_user.first_name %> <%= current_user.last_name %>
+                <span class="caret"></span>
+                <% else %>
+                <%= link_to 'Sign Up', signup_path %></a>
+                <% end %>
+              </a>
 
-            <li><a href="#">Settings</a></li>
-            <li><%= link_to 'Inventory', equipment_index_path %></li>
-            <li class="divider"></li>
-            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Settings</a></li>
+                <li><%= link_to 'Inventory', equipment_index_path %></li>
+                <li class="divider"></li>
+                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+              </ul>
 
+            </li>
           </ul>
-
-        </li>
-
-      </ul>
-
+        </div> <!-- end form group -->
+      </div>
     </div>
+  </nav>
 
-  </div>
-  
-</nav>
-
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
