@@ -2,14 +2,13 @@
 	<div class="user-profile">
 		<a href="#" class="btn btn-success" role="button">Back to List</a>
 		<div class="user-info">
-			<div class="profile-picture">
-			</div>
+			  <%= image_tag @user.avatar.url(:medium), class: "profile-picture" %>
 			<h1><%= @user.first_name %>
 			<%= @user.last_name %></h1><br>
 			<h2>Background/Bio:</h2></br>
 			<p><%= @user.bio %></p>
 
-    	<%= image_tag @user.avatar.url(:medium) %>
+    	
 
 	  </div>
 	  <div class="user-reviews">
