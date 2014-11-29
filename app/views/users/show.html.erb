@@ -1,9 +1,32 @@
-<h1>User Profile</h1>
-
-
-<%= @user.first_name %> <br>
-<%= @user.last_name %> <br>
-<%= @user.email %> <br>
-
-
-
+<div class="container">
+	<div class="user-profile">
+		<a href="#" class="btn btn-success" role="button">Back to List</a>
+		<div class="user-info">
+			<div class="profile-picture">
+			</div>
+			<h1><%= @user.first_name %>
+			<%= @user.last_name %></h1><br>
+			<h2>Background/Bio:</h2></br>
+			<p><%= @user.bio %></p>
+	  </div>
+	  <div class="user-reviews">
+	    <h1>Reviews</h1>
+	      <div class="review">
+	        <h2>Review Title</h2>
+	        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
+	      </div>
+	      <div class="review">
+	        <h2>Review Title</h2>
+	        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
+	      </div>
+	      <div class="review">
+	        <h2>Review Title</h2>
+	        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
+	      </div>
+	      <div class="review">
+	        <h2>Review Title</h2>
+	        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
+	      </div>
+	  </div>
+  </div>
+</div>

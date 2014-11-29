@@ -1,3 +1,192 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* The following is for the SIGNUP aka user new page */
+.signup {
+	width: 50%;
+	height: 490px;
+	background-color: #ffbb37;
+	margin: 0 auto;
+}
+
+.signup h1 {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.new_user {
+	margin: 0 auto;
+	width: 40%;
+}
+
+.new_user label {
+	margin-top: 5px;
+}
+
+.new_user input {
+  width: 100%;
+  height: 35px;
+  border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.new_user .btn {
+	margin-top: 10px;
+	width: 90%;
+	position: relative;
+	left: 4%;
+	height: 50px;
+}
+
+
+/* The following is for the USERS EDIT page */
+.user-edit {
+	width: 60%;
+	height: 600px;
+	background-color: #ffbb37;
+	margin: 0 auto;
+	margin-top: -20px;
+}
+
+.user-edit h1 {
+	text-align: center;
+	padding-top: 10px;
+}
+
+.left-info {
+	float: left;
+	width: 40%;
+	margin-left: 2%;
+}
+
+.left-info input {
+  width: 70%;
+  height: 35px;
+  border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-bottom: 5px;
+	padding: 0px 5px;
+}
+
+.right-info {
+	float: right;
+	width: 50%;
+}
+
+.right-info input {
+  width: 70%;
+  height: 35px;
+  border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-bottom: 5px;
+	padding: 0px 5px;
+}
+
+.bottom-info {
+	clear: both;
+	margin-left: 2%;
+	width: 90%;
+	position: relative;
+}
+
+.bottom-info textarea {
+	width: 95%;
+	max-width: 95%;
+	height: 120px;
+	max-height: 120px;
+  border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	margin-bottom: 5px;
+	padding: 2px 5px;
+}
+
+.user-edit .btn {
+	margin-left: 2%;
+	margin-top: 10px;
+}
+
+
+/* The following is for USERS SHOW aka user profile */
+
+.user-profile {
+	width: 100%;
+	height: 100%;
+	background-color: #ffbb37;
+	padding-bottom: 20px;
+}
+
+.user-profile .btn {
+	margin-left: 1%;
+	margin-top: 10px;
+}
+
+.user-profile h1 {
+	margin-left: 1%;
+	padding-top: 7px;
+}
+
+.profile-picture {
+	height: 200px;
+	width: 200px;
+	background-image: url('walter-white.jpeg');
+ 	background-repeat: no-repeat;
+ 	background-size: 100%;
+	margin-left: 1%;
+	border-radius: 3px;
+	float: left;
+}
+
+.user-info h1 {
+	margin-left: 225px;
+	margin-bottom: 0px;
+}
+
+.user-info h2 {
+	margin-left: 225px;
+	margin-bottom: 0px;
+	margin-top: -14px;
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.user-info p {
+	margin-left: 225px;
+	margin-top: -10px;
+  font-size: 16px;
+  width: 50%;
+}
+
+.user-reviews {
+	clear: both;
+	padding-top: 10px;
+}
+
+.review {
+	width: 40%;
+	height: 120px;
+	background-color: white;
+  margin-left: 1%;
+  margin-bottom: 20px;
+  border-radius: 3px;
+	overflow-y: auto;
+	display: inline-block;
+}
+
+.review h2 {
+	font-size: 20px;
+	text-decoration: underline;
+	margin-left: 5px;
+	position: relative;
+}
+
+.review p {
+	margin: 0px 5px;
+}
+
+
