@@ -1,25 +1,31 @@
-<div class="container">
+<div class="container equip-background">
+  <div class="left-side">
 
-  <h1>Edit Equipment</h1>
+  <%= image_tag @equipment.avatar.url(:medium), :class => "equip-image" %>
 
-  <%= form_for @equipment do |f| %>
+  </div>
+  <div class="right-side">
+    <h1>Edit Equipment</h1>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= form_for @equipment, :html => { :multipart => true } do |f| %>
 
-    <%= f.label :current_daily_cost %>
-    <%= f.number_field :current_daily_cost %><br>
+      <%= f.label :name %><br>
+      <%= f.text_field :name %><br>
 
-    <%= f.label :description %>
-    <%= f.text_area :description %><br>
+      <%= f.label :current_daily_cost %><br>
+      <%= f.number_field :current_daily_cost %><br>
 
-    <%= f.label :availability %>
-    <%= f.text_field :availability %><br>
+      <%= f.label :description %><br>
+      <%= f.text_area :description %><br>
 
-    <%= f.submit "Save" %>
+      <%= f.label :availability %><br>
+      <%= f.text_field :availability %><br>
 
-    <%= link_to "Back to Inventory", equipment_index_path %>
+      <%= f.file_field :avatar %>
 
-  <% end %>
+      <%= f.submit "Save", class: "btn btn-success btn-lg" %>
+      <%= link_to "Back to Inventory", equipment_index_path %>
 
+    <% end %>
+  </div>
 </div>

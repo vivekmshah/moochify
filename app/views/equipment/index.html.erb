@@ -1,20 +1,18 @@
-  
+<div class="container equip-background">
+  <h1>Inventory</h1>
 
-<div class="container-inventory">
-	<div class="equip-inventory">
-		<h3>Inventory</h3>
-		<div class="item-inventory">
-			<% @equipment.each do |e| %>
-			<h2><%= e.name %></h2>
-				<p><strong>Description: </strong><%= e.description %> 
-				<%= e.availability %>,<strong><%= number_to_currency(e.current_daily_cost) %></strong></p>
-				<%= button_to "Edit", edit_equipment_path(e.id), :method => :get  %>
-				<%= button_to "Remove", equipment_path(e.id), :method => :delete  %>
-			<% end %>
-		</div>
-	</div>
-</div>
-
+  <% @equipment.each do |e| %>
+    <div class="equip-listing">
+	    
+      <%= image_tag e.avatar.url(:thumb), :class => "equip-thumb" %>
+	    <h2><%= e.name %></h2>
+	    <h3><%= number_to_currency(e.current_daily_cost) %></h3>
+	    <p><%= e.description %></p>
+	    <h3><%= e.availability %></h3>
+	    <%= button_to "Edit", edit_equipment_path(e.id), :method => :get, class: "btn" %>
+	    <%= button_to "Remove", equipment_path(e.id), :method => :delete, class: "btn btn-danger" %>
+    </div>
+  <% end %>
 
 
 
