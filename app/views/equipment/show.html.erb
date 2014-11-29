@@ -4,6 +4,10 @@
 <%= @equipment.description %><br>
 <%= @equipment.availability %>
 
+<%#= image_tag @equipment.avatar.url %>
+<%= image_tag @equipment.avatar.url(:medium) %>
+<%#= image_tag @equipment.avatar.url(:thumb) %>
+
 <%= form_tag orders_path do %>
 
   <%= date_field_tag :start_date, nil  %>

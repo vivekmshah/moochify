@@ -71,8 +71,7 @@ class EquipmentController < ApplicationController
 private
 
   def equipment_params
-    params.require(:equipment).permit(:name, :current_daily_cost, :description, :availability)
+    params.require(:equipment).permit(:name, :current_daily_cost, :description, :availability, :avatar)
   end
 
 end
-

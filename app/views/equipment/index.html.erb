@@ -3,8 +3,8 @@
 
   <% @equipment.each do |e| %>
     <div class="equip-listing">
-	    <div class="equip-thumb">
-	    </div>
+	    
+      <%= image_tag e.avatar.url(:thumb), :class => "equip-thumb" %>
 	    <h2><%= e.name %></h2>
 	    <h3><%= number_to_currency(e.current_daily_cost) %></h3>
 	    <p><%= e.description %></p>
