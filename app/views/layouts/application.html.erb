@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="style.css" />
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhRkF2blpTUciRi_tgluc7BpjSuGN19Mc&sensor=false&libraries=places"></script>
 </head>
@@ -23,18 +22,20 @@
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand" href="/">moochify</a>
+      <a class="navbar-brand" href="/">
+        <%= image_tag("logo.png") %>
+      </a>
 
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-      <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left") do %>
+      <%= form_tag({controller: "results", action: "index"}, {class: "navbar-form navbar-left form-inline"}) do %>
           <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
-          <%= text_field_tag :zip, nil, placeholder: "Zip" %>
+          <%= text_field_tag :zip, nil, id: "zip", placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
           <%= date_field_tag :end_date, nil  %>
-          <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
+          <%= submit_tag "Search", id: "search", class: "btn btn-success btn-lg" %>
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
@@ -45,16 +46,20 @@
         <% end %>
         <li class="dropdown">
 
+          <% if current_user %>
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-
+          <% end %>
+            
             <% if current_user %>
               <%= current_user.first_name %> <%= current_user.last_name %>
               <span class="caret"></span>
             <% else %>
               <%= link_to 'Sign Up', signup_path %></a>
             <% end %>
-            
+
+          <% if current_user %>            
           </a>
+          <% end %>
 
           <ul class="dropdown-menu" role="menu">
 
