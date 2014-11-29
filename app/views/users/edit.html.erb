@@ -1,8 +1,14 @@
 <div class="container">
 	<div class="user-edit">
 		<h1>Edit Your Information</h1>
-		<%= form_for @user do |f| %>
+		<%= form_for @user, :html => { :multipart => true } do |f| %>
+
+    <%= image_tag @user.avatar.url(:medium) %>
+
     <div class="left-info">
+
+    <%= f.file_field :avatar %>
+
     <%= f.label :first_name %> <br>
 		<%= f.text_field :first_name, placeholder: "First name" %><br>
 

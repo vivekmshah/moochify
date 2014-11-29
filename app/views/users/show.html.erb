@@ -8,6 +8,9 @@
 			<%= @user.last_name %></h1><br>
 			<h2>Background/Bio:</h2></br>
 			<p><%= @user.bio %></p>
+
+    	<%= image_tag @user.avatar.url(:medium) %>
+
 	  </div>
 	  <div class="user-reviews">
 	    <h1>Reviews</h1>
