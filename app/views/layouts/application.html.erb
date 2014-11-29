@@ -5,66 +5,86 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <link rel="stylesheet" type="text/css" href="style.css" />
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhRkF2blpTUciRi_tgluc7BpjSuGN19Mc&sensor=false&libraries=places"></script>
 </head>
 <body>
 
-  <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">moochify</a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <%= form_tag(controller: "results", action: "index", class: "navbar-form navbar-left", role: "search") do %>
+<nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0px;">
+  <div class="container-fluid">
 
-        <div class="form-group">
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <a class="navbar-brand" href="/">
+        <%= image_tag("logo.png") %>
+      </a>
+
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <%= form_tag({controller: "results", action: "index"}, {class: "navbar-form navbar-left form-inline"}) do %>
           <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
-          <%= text_field_tag :zip, nil, placeholder: "Zip" %>
+          <%= text_field_tag :zip, nil, id: "zip", placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
           <%= date_field_tag :end_date, nil  %>
-          <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
+          <%= submit_tag "Search", id: "search", class: "btn btn-success btn-lg" %>
+      <% end %>
 
+      <ul class="nav navbar-nav navbar-right">
+
+        <% if current_user %>
+          <li><%= link_to 'Add equipment', new_equipment_path %></li>
+        <% else %>
+          <li><%=link_to 'Log in', login_path %></li>
+        <% end %>
+        
+        <li class="dropdown">
+
+          <% if current_user %>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
           <% end %>
-          <ul class="nav navbar-nav navbar-right">
+            
             <% if current_user %>
-            <li><%= link_to 'Add equipment', new_equipment_path %></li>
+              <%= current_user.first_name %> <%= current_user.last_name %>
+              <span class="caret"></span>
             <% else %>
-            <li><%=link_to 'Log in', login_path %></li>
+              <%= link_to 'Sign Up', signup_path %></a>
             <% end %>
-            <li class="dropdown">
 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <% if current_user %>
-                <%= current_user.first_name %> <%= current_user.last_name %>
-                <span class="caret"></span>
-                <% else %>
-                <%= link_to 'Sign Up', signup_path %></a>
-                <% end %>
-              </a>
+          <% if current_user %>            
+          </a>
+          <% end %>
 
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Settings</a></li>
-                <li><%= link_to 'Inventory', equipment_index_path %></li>
-                <li class="divider"></li>
-                <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
-              </ul>
+          <% if current_user %>
+          <ul class="dropdown-menu" role="menu">
 
-            </li>
+            <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+            <li><%= link_to 'Inventory', equipment_index_path %></li>
+            <li class="divider"></li>
+            <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+
           </ul>
-        </div> <!-- end form group -->
-      </div>
-    </div>
-  </nav>
+          <% end %>
 
-  <%= yield %>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+  
+</nav>
+
+<%= yield %>
 
 </body>
 </html>

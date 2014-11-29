@@ -41,9 +41,8 @@ class EquipmentController < ApplicationController
   end
 
   def index
-    # NEED TO FIX USER_ID REFERENCE -> @equipment = Equipment.where(user_id: current_user)
-    @equipment = Equipment.all
-
+    @equipment = Equipment.where(user_id: current_user)
+    
     respond_to do |format|
       format.html {  }
       format.json { render json: @equipment, status: :ok }
