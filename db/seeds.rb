@@ -1,10 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create(
+  first_name: "Johnny",
+  last_name: "Walker",
+  email: "johnny.walker@general.com",
+  phone: "3105663080",
+  address_1: "501 Wilshire Blvd",
+  city: "Santa Monica",
+  state: "CA",
+  zip: "90403",
+  bio: "Johnny has earned the distinction of being one of Los Angeles’ leading residential general contractors.",
+  password: "johnny",
+  password_confirmation: "johnny"
+  )
+
+User.create(
+  first_name: "Ellie",
+  last_name: "Stinson",
+  email: "ellie.stinson@gmail.com",
+  phone: "8773485665",
+  address_1: "1520 2nd St",
+  city: "Santa Monica",
+  state: "CA",
+  zip: "90401",
+  bio: "Ellie has a Los Angeles based interior design studio that provides interior services for Residential, Commercial, & Hospitality design.",
+  password: "ellie",
+  password_confirmation: "ellie"
+  )
 
 Equipment.create(
     name: "X4 18-Volt Hyper Lithium-Ion Cordless Drill and Impact Driver Combo Kit (3-Tool) with Radio",
