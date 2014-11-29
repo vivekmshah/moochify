@@ -15,4 +15,9 @@ Moochify::Application.routes.draw do
 
   post 'results', to: 'results#index'
 
+  scope 'api', defaults: {format: :json} do
+    resources :equipment, only: [:index, :create, :update, :destroy]
+    resources :orders, only: [:index, :create, :update, :destroy]
+  end
+
 end

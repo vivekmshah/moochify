@@ -1,12 +1,13 @@
 <div class="container equip-background">
   <div class="left-side">
-    <div class="equip-image">
-    </div>
+
+  <%= image_tag @equipment.avatar.url(:medium), :class => "equip-image" %>
+
   </div>
   <div class="right-side">
     <h1>Edit Equipment</h1>
 
-    <%= form_for @equipment do |f| %>
+    <%= form_for @equipment, :html => { :multipart => true } do |f| %>
 
       <%= f.label :name %><br>
       <%= f.text_field :name %><br>
@@ -19,6 +20,8 @@
 
       <%= f.label :availability %><br>
       <%= f.text_field :availability %><br>
+
+      <%= f.file_field :avatar %>
 
       <%= f.submit "Save", class: "btn btn-success btn-lg" %>
       <%= link_to "Back to Inventory", equipment_index_path %>
