@@ -35,6 +35,12 @@
 
  ///////// Form Fields //////////
 
+.entry-field {
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+ }
+
  #name {
  	margin: 1px;
  	height: 50px;
@@ -53,19 +59,21 @@
  #start_date {
  	margin: 1px;
  	height: 50px;
- 	width: 150px;
+ 	width: 172px;
  	padding: 5px;
  }
 
  #end_date {
  	margin: 1px;
  	height: 50px;
- 	width: 150px;
+ 	width: 172px;
  	padding: 5px;
  }
 
- #submit {
- 	height: 60px;
+.home-submit {
+ 	height: 51px;
+ 	margin-bottom: 4px;
+ 	margin-left: 2px;
  }
 
 .caption h3 {

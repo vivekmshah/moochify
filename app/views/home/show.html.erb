@@ -8,11 +8,11 @@
       <h3>What do you want to mooch today?</h3>
     </div>
       <%= form_tag results_path do %>
-        <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
-        <%= text_field_tag :zip, nil, placeholder: "Zip" %>
-        <%= date_field_tag :start_date, nil  %>
-        <%= date_field_tag :end_date, nil  %>
-        <%= submit_tag  "Search", class: "btn btn-success btn-lg" %>
+        <%= text_field_tag :name, nil, placeholder: "Enter equipment...", class: "entry-field" %>
+        <%= text_field_tag :zip, nil, placeholder: "Zip", class: "entry-field" %>
+        <%= date_field_tag :start_date, nil, class: "entry-field"  %>
+        <%= date_field_tag :end_date, nil, class: "entry-field"  %>
+        <%= submit_tag  "Search", class: "btn btn-success btn-lg home-submit" %>
       <% end %>
   </div>
 </div>
