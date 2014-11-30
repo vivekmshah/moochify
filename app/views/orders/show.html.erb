@@ -1,2 +1,31 @@
-<h1>Orders#show</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="img-avatar">
+				<%= image_tag @user.avatar.url(:thumb) %><br>
+				<%= @user.first_name %> <%= @user.last_name %>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4	">		
+			<%= image_tag @equipment.avatar.url(:medium) %>
+		</div>
+
+		<div class="col-md-8">
+			<div class="order-confirm">
+				<h2>Your order has been received.</h2>
+				<h1><%= @equipment.name %></h1>
+				<h1>Order Details:</h1>
+				<p>Cost per day: $<%= @order.daily_cost %></br>
+					<% dayCount = (@order.end_date - @order.start_date).to_i %>
+					Number of days: <%= dayCount %></br></br>
+					Your total: <strong>$<%= @order.daily_cost * dayCount %></strong></p>
+				  <%= link_to "Review your orders", orders_path, class: "btn btn-success btn-lg"%>
+				  <%= submit_tag "Print this order", class: "btn btn-success btn-lg"%>
+			</div>
+		</div>
+			
+	</div>
+</div>
