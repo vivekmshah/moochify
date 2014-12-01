@@ -1,5 +1,8 @@
 class EquipmentController < ApplicationController
 
+  # IMPORTANT: we need to create something that allows ONLY
+  # the owner of an equipment to edit it (vs everyone who is signed in)
+
   def new
     @equipment = Equipment.new
   end
