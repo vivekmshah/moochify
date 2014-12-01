@@ -5,44 +5,43 @@
 
     <div class="top-info">
         <%= image_tag @user.avatar.url(:medium), class: "user-image" %><br>
-        <%= f.file_field :avatar, class: "pic-finder" %>
+      <%= f.file_field :avatar, class: "pic-finder" %>
     </div>
 
     <div class="left-info">
+      <%= f.label :first_name %> <br>
+  		<%= f.text_field :first_name, placeholder: "First name" %><br>
 
-    <%= f.label :first_name %> <br>
-		<%= f.text_field :first_name, placeholder: "First name" %><br>
+      <%= f.label :last_name %> <br>
+  		<%= f.text_field :last_name, placeholder: "Last name" %><br>
 
-    <%= f.label :last_name %> <br>
-		<%= f.text_field :last_name, placeholder: "Last name" %><br>
+      <%= f.label :email %> <br>
+  		<%= f.text_field :email, placeholder: "Email" %><br>
 
-    <%= f.label :email %> <br>
-		<%= f.text_field :email, placeholder: "Email" %><br>
-
-    <%= f.label :phone %> <br>
-		<%= f.text_field :phone, placeholder: "Phone Number" %><br>
+      <%= f.label :phone %> <br>
+  		<%= f.text_field :phone, placeholder: "Phone Number" %><br>
     </div>
     <div class="right-info">
-    <%= f.label :address_1 %> <br>
-		<%= f.text_field :address_1, placeholder: "Address 1" %><br>
+      <%= f.label :address_1 %> <br>
+  		<%= f.text_field :address_1, placeholder: "Address 1" %><br>
 
-    <%= f.label :address_2 %> <br>
-		<%= f.text_field :address_2, placeholder: "Address 2" %><br>
+      <%= f.label :address_2 %> <br>
+  		<%= f.text_field :address_2, placeholder: "Address 2" %><br>
 
-    <%= f.label :city %> <br>
-		<%= f.text_field :city, placeholder: "City" %><br>
+      <%= f.label :city %> <br>
+  		<%= f.text_field :city, placeholder: "City" %><br>
 
-    <%= f.label :state %> <br>
-		<%= f.text_field :state, placeholder: "State" %><br>
+      <%= f.label :state %> <br>
+  		<%= f.text_field :state, placeholder: "State" %><br>
 
-    <%= f.label :zip %> <br>
-		<%= f.text_field :zip, placeholder: "Zip" %><br>
+      <%= f.label :zip %> <br>
+  		<%= f.text_field :zip, placeholder: "Zip" %><br>
     </div>
     <div class="bottom-info">
-    <%= f.label :bio %> <br>
-		<%= f.text_area :bio, placeholder: "Bio" %><br>
+      <%= f.label :bio %> <br>
+  		<%= f.text_area :bio, placeholder: "Bio" %><br>
     </div>
-		<%= f.submit "Update", class: "btn btn-success btn-lg" %>
+		  <%= f.submit "Update", class: "btn btn-success btn-lg" %>
 
 		<%end%>
   </div>

@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-  # IMPORTANT: go to the bottom and verify that no bugs
-  # will be encountered with the 'user_edits' method
   before_filter :user_edits, only: [:edit, :update]
   skip_before_filter :authorize, only: [:new, :create]
 

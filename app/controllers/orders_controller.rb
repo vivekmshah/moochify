@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
-
-  # IMPORTANT: we need to add something that allows ONLY
-  # the single user to view their own orders
+  
+  before_filter :orders_show, only: [:show]
 
   def index
     @orders = Order.where(user_id: current_user)
@@ -17,6 +16,12 @@ class OrdersController < ApplicationController
     order = current_user.orders.new(params.permit(:start_date, :end_date, :daily_cost, :equipment_id))
     order.save
     redirect_to order_path(order)  
+  end
+
+private
+  
+  def orders_show
+    redirect_to home_path if current_user.id != Order.find(params[:id]).user_id
   end
 
 end
