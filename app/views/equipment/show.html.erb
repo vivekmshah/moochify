@@ -11,11 +11,8 @@
 			<div class="equip-specs">
 				<h3><%= @equipment.name %></h3>
 				<h1><%= number_to_currency(@equipment.current_daily_cost) %></h1>
-
-				
 				<p><strong>Description</strong>: <%= @equipment.description %></p><br>
 				<p><strong>Availability:</strong> <%= @equipment.availability %></p>
-
 
 				<h1>Reserve this item.</h1>
 				<%= form_tag orders_path do %>
