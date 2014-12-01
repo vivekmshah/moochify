@@ -8,6 +8,8 @@ gem 'bootstrap-sass'
 
 gem 'geocoder'
 
+gem 'json', '~> 1.8.1'
+
 group :development, :test do
 
   gem 'rspec-rails', '~> 3.0.0'
