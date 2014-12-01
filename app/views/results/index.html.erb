@@ -30,6 +30,8 @@ var markerLocations = <%= raw @locations.to_json %>;
 
 var map;
 var mapCenter;
+var myLat;
+var myLng;
 var geo = new google.maps.Geocoder();
 
 google.maps.event.addDomListener(window, 'load', initialize);
@@ -37,26 +39,25 @@ google.maps.event.addDomListener(window, 'load', initialize);
 function initialize() {
 
     geo.geocode({'address': zipcode.toString()}, function(results, status) {
+
         mapCenter = results[0].geometry.location;
-    });
+        myLat = mapCenter.k;
+        myLng = mapCenter.B;
 
-    // var ctrLatlng = new google.maps.LatLng(mapCenter.k, mapCenter.B);
-
-    map = new google.maps.Map(document.getElementById('map-canvas'), {
-        zoom: 3,
-        center: new google.maps.LatLng(29.532, -55.491)
-    });
-
-    // map.setCenter(mapCenter);
-    // map.setCenter(8);
-
-    for(var i = 0; i < markerLocations.length; i++) {
-        var myLatlng = new google.maps.LatLng(markerLocations[i].latitude, markerLocations[i].longitude);
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+            zoom: 13,
+            center: new google.maps.LatLng(myLat, myLng)
         });
-    }
+
+        for(var i = 0; i < markerLocations.length; i++) {
+            var myLatlng = new google.maps.LatLng(markerLocations[i].latitude, markerLocations[i].longitude);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+        }
+
+    });
 }
 
 </script>
