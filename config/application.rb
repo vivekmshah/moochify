@@ -13,6 +13,7 @@ Bundler.require(*Rails.groups)
 
 module Moochify
   class Application < Rails::Application
+    # config.i18n.enforce_available.locales = true
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
