@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  # IMPORTANT: go to the bottom and verify that no bugs
+  # will be encountered with the 'user_edits' method
+  before_filter :user_edits, only: [:edit, :update]
+  skip_before_filter :authorize, only: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -19,7 +24,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path
+      redirect_to edit_user_path
     else
       render 'edit'
     end
@@ -38,6 +43,10 @@ private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :phone, :address_1, :address_2, :city, :state, :zip, :bio, :avatar)
+  end
+
+  def user_edits
+    redirect_to home_path if current_user != User.find(params[:id])
   end
 
 end

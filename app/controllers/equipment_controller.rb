@@ -1,14 +1,17 @@
 class EquipmentController < ApplicationController
 
+  # IMPORTANT: we need to create something that allows ONLY
+  # the owner of an equipment to edit it (vs everyone who is signed in)
+
   def new
     @equipment = Equipment.new
   end
 
   def create
 
-    # MISSING USER_ID WHEN USING API ENDPOINT -> equipment = current_user.equipment.new(equipment_params)
+    # MISSING USER_ID WHEN USING API ENDPOINT -> 
+    equipment = current_user.equipment.new(equipment_params)
 
-    equipment = Equipment.new(equipment_params)
     respond_to do |format|
       if equipment.save
         format.html { redirect_to equipment_index_path, notice: 'Equipment was successfully created.' }

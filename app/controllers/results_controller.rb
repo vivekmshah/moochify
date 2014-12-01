@@ -1,5 +1,7 @@
 class ResultsController < ApplicationController
 
+  skip_before_filter :authorize
+
   def index
     @results = Equipment.where('name LIKE ?', "%#{params[:name]}%")
     # raise @results.inspect

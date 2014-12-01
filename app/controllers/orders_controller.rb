@@ -1,5 +1,8 @@
 class OrdersController < ApplicationController
 
+  # IMPORTANT: we need to add something that allows ONLY
+  # the single user to view their own orders
+
   def index
     @orders = Order.where(user_id: current_user)
   end
