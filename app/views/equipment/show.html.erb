@@ -1,21 +1,56 @@
-<h1><%= @equipment.name %></h1>
 
-<%= @equipment.current_daily_cost %><br>
-<%= @equipment.description %><br>
-<%= @equipment.availability %>
 
-<%#= image_tag @equipment.avatar.url %>
-<%= image_tag @equipment.avatar.url(:medium) %>
-<%#= image_tag @equipment.avatar.url(:thumb) %>
 
-<%= form_tag orders_path do %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		<%= submit_tag "Go Back", class: "btn btn-success btn-lg"%>
+		</div>
+	</div>
 
-  <%= date_field_tag :start_date, nil  %>
-  <%= date_field_tag :end_date, nil  %>
-  <%= hidden_field_tag :equipment_id, @equipment.id %>
+<!-- Equipment Specs Row -->
 
-  <%= submit_tag "Place order" %>
+	<div class="row">
+		<div class="col-md-4">
+			<%= image_tag @equipment.avatar.url(:medium) %>
+		</div>
 
-<% end %>
+		<div class="col-md-8">
+			<div class="equip-specs">
+				<h3><%= @equipment.name %></h3>
+				<h1><%= number_to_currency(@equipment.current_daily_cost) %></h1>
+
+				
+				<p><strong>Description</strong>: <%= @equipment.description %></p><br>
+				<p><strong>Availability:</strong> <%= @equipment.availability %></p>
+
+
+				<h1>Reserve this item.</h1>
+				<%= form_tag orders_path do %>
+
+				  <%= date_field_tag :start_date, nil  %>
+				  <%= date_field_tag :end_date, nil  %>
+
+				  <%= hidden_field_tag :equipment_id, @equipment.id %>
+				  <%= hidden_field_tag :daily_cost, @equipment.current_daily_cost %>
+
+				  <%= submit_tag "Place order", class: "btn btn-success btn-lg"%>
+		 	</div>	
+		</div>
+	</div> <!-- End Equipment Specs Row -->
+
+
+	<!-- Reviews Row -->
+
+	<div class="row"> 
+		<div class="col-md-6">
+			<h1>Reviews</h1>
+		</div>
+	</div>
+
+
+	<% end %>
+</div> <!-- End Container -->
+
 
 
