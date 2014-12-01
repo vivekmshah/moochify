@@ -1,7 +1,6 @@
 class EquipmentController < ApplicationController
 
-  # IMPORTANT: we need to create something that allows ONLY
-  # the owner of an equipment to edit it (vs everyone who is signed in)
+  before_filter :equipment_edits, only: [:edit, :update]
 
   def new
     @equipment = Equipment.new
@@ -74,6 +73,10 @@ private
 
   def equipment_params
     params.require(:equipment).permit(:name, :current_daily_cost, :description, :availability, :avatar)
+  end
+
+  def equipment_edits
+    redirect_to home_path if current_user.id != Equipment.find(params[:id]).user_id
   end
 
 end
