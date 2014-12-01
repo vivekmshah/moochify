@@ -7,10 +7,13 @@
  	background-size: 100%;
  	text-align: center;
  	padding: 10%;
+<<<<<<< HEAD
+=======
  }
 
  .jumbotron h3{
  	color: white;
+>>>>>>> master
  }
 
  .homepage-header {
@@ -36,8 +39,11 @@
  	border-radius: 5px;
  }
 
-
+<<<<<<< HEAD
+ // Form Fields
+=======
  //Form Fields
+>>>>>>> master
 
 .entry-field {
   border: none;
