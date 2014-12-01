@@ -3,24 +3,19 @@ class ResultsController < ApplicationController
   skip_before_filter :authorize
 
   def index
-    @results = Equipment.where('name LIKE ?', "%#{params[:name]}%")
+
     @zip = params[:zip]
 
-    @locations = User.find_by_sql([
-      'SELECT users.id, users.longitude, users.latitude ' +
-      'FROM users ' +
-      'INNER JOIN equipment ' +
-      'ON users.id = equipment.user_id ' +
-      # 'WHERE users.zip = ? ' +
-      # 'AND equipment.name LIKE ?',
-      'WHERE equipment.name LIKE ?',
-      # "#{@zip}",
-      "%#{params[:name]}%"
-    ])
-  
-    # e = Equipment.all
-    # e = e.where("name LIKE ?","%#{params[:name]}%") if !params[:name].blank?
-    # e = e.where(zip: @zip) if !params[:zip].blank?
+    @results = Equipment.all
+    @results = @results.where("lower(name) LIKE ?", "%#{params[:name].downcase}%") if !params[:name].blank?
+    @results = @results.joins(:user)
+    @results = @results.where(:users => {:zip => params[:zip]}) if !params[:zip].blank?
+
+    @locations = User.all
+    @locations = @locations.select(:longitude, :latitude)
+    @locations = @locations.where(zip: params[:zip]) if !params[:zip].blank?
+    @locations = @locations.joins(:equipment) if !params[:name].blank?
+    @locations = @locations.where("lower(equipment.name) LIKE ?", "%#{params[:name].downcase}%") if !params[:name].blank?
 
   end
 
@@ -32,5 +27,3 @@ class ResultsController < ApplicationController
   end
 
 end
-
-
