@@ -6,7 +6,8 @@
             <% if @results %>
                 <% @results.each do |r| %>
                     <div class="result">   
-                        <div class="title"><%= r.name %></div>
+                        <%= image_tag r.avatar.url(:thumb), :class => "equip-thumb" %>
+                        <%= link_to "#{r.name}", equipment_path(r) %> 
                         <div class="desc"><%= r.description %></div>
                     </div>
                 <% end %>
