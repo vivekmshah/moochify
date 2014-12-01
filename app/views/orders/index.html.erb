@@ -1,41 +1,44 @@
 
-  <h1>Order History</h1>
-
-  <% @orders.each do |o| %>
-	    
-	    <h1>****</h1>
-
-	    <h3>Equipment</h3>
-
-  		<% equipment = Equipment.find(o.equipment_id) %>
-	    <p>Equipment<%= equipment.name %></p>
-      <%= image_tag equipment.avatar.url(:thumb) %>
-	    
-	    <h3>Order Details</h3>
-
-	    <p>Start date: <%= o.start_date %></p>
-	    <p>End date: <%= o.end_date %></p>
-	    <p>Daily rate: <%= number_to_currency(o.daily_cost) %></p>
-	    <% dayCount = (o.end_date - o.start_date).to_i %>
-	    <p>Number of days: <%= dayCount %></p>
-	    <p>Total cost: <%= o.daily_cost * dayCount %></p>
-
-	    <h3>Neighbor</h3>
-
-  		<% neighbor = User.find(o.user_id) %>
-	    <p>Name<%= neighbor.first_name %> <%= neighbor.last_name %></p>
-      <%= image_tag neighbor.avatar.url(:thumb) %>
-
-	    <h3>Owner</h3>
-
-  		<% owner = User.find(equipment.user_id) %>
-	    <p>Name<%= owner.first_name %> <%= owner.last_name %></p>
-      <%= image_tag owner.avatar.url(:thumb) %>
 
 
+<div class="container">
+
+	<h3>Order History</h3>
+	
+	<div class="row">
+    <div class="col-md-4 col-sm-4"><h1>Equipment</h1></div>
+    <div class="col-md-4 col-sm-4"><h1>Order Details</h1></div>
+    <div class="col-md-4 col-sm-4"><h1>Owner</h1></div>
+	</div>
+
+	<% @orders.each do |o| %>
+	<div class="row">
+    <div class="order-hist">
+  		<div class="col-md-4 col-sm-4">
+    		<% equipment = Equipment.find(o.equipment_id) %>
+        <strong><p><%= equipment.name %></p></strong>
+        <%= image_tag equipment.avatar.url(:thumb) %>
+  	  </div>
+      <div class="col-md-4 col-sm-4">
+  	    <p><strong>Start date:</strong> <%= o.start_date %></p>
+  	    <p><strong>End date:</strong> <%= o.end_date %></p>
+  	    <p><strong>Daily rate:</strong> <%= number_to_currency(o.daily_cost) %></p>
+  	    <% dayCount = (o.end_date - o.start_date).to_i %>
+  	    <p><strong>Number of days:</strong> <%= dayCount %></p>
+  	    <p><strong>Total cost:</strong> <%= o.daily_cost * dayCount %></p>
+  	  </div>
+      <div class="col-md-4 col-sm-4">
+    		<% owner = User.find(equipment.user_id) %>
+  	    <strong><p><%= owner.first_name.titleize %> <%= owner.last_name.titleize %></p></strong>
+        <%= image_tag owner.avatar.url(:thumb) %>
+      </div>
+    </div>
+  </div> <!-- End Row -->
   <% end %>
 
-<h1>Reviews</h1>
+</div> <!-- End Container -->
+
+<!-- <h1>Reviews</h1> -->
 
 
 

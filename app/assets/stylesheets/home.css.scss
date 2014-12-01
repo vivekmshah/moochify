@@ -86,9 +86,9 @@
 
 ////////// Icon Boxes //////////////
 
-.row {
-	margin: 40px;
-}
+// .row {
+// 	margin: 10px;
+// }
 
 .row h3 {
 	font-size: 3em;
@@ -96,6 +96,7 @@
 
 .thumbnail {
 border: none;
+margin: 40px;
 }
 
 .hank {
@@ -104,18 +105,18 @@ border: none;
 }
 
 img.thumb-icon {
-	width: 400px;
-	height: 200px;
+	width: 130px;
+	height: 130px;
 }
 
 //////// 3 step process ///////////
 
 .steps {
-	background-color: brown;
 	padding: 40px;
 	text-align: center;
-	margin: 10px;
-	color: white;
+	margin: 50px;
+	color: black;
+
 }
 
 
