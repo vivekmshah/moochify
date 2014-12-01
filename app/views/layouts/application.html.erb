@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
       <%= form_tag({controller: "results", action: "index"}, {class: "navbar-form navbar-left form-inline"}) do %>
-          <%= text_field_tag :name, nil, placeholder: "Enter equipment..." %>
+          <%= text_field_tag :name, nil, placeholder: "Enter stuff..." %>
           <%= text_field_tag :zip, nil, id: "zip", placeholder: "Zip" %>
           <%= date_field_tag :start_date, nil  %>
           <%= date_field_tag :end_date, nil  %>
