@@ -1,43 +1,41 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="img-avatar">
-				<%= image_tag @user.avatar.url(:thumb) %><br>
-				<%= @user.first_name %> <%= @user.last_name %>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4	">		
-			<%= image_tag @equipment.avatar.url(:medium) %>
-		</div>
-
-		<div class="col-md-8">
-			<div class="order-confirm">
-				<h2>Your order has been processed.</h2>
-				<h1><%= @equipment.name %></h1>
-				<h1>Order Details:</h1>
-				<p>Cost per day: $<%= @order.daily_cost %></br>
-					<% dayCount = (@order.end_date - @order.start_date).to_i %>
-					Number of days: <%= dayCount %></br></br>
-					Your total: <strong>$<%= @order.daily_cost * dayCount %></strong></p>
-				  <%= link_to "Order History", orders_path, class: "btn btn-success btn-lg"%>
+	<div class="show-order">
+		<div class="row order-show-row">
+			<div class="col-md-4">		
+				<%= image_tag @equipment.avatar.url(:medium) %>
 			</div>
 
-			<h2>Reviews</h2>
+			<div class="col-md-8">
+				<div class="order-confirm">
+					<h2>Your order has been processed.</h2>
+					<h1><%= @equipment.name %></h1>
+					<h1>Order Details:</h1>
+					<p>Cost per day: $<%= @order.daily_cost %></br>
+						<% dayCount = (@order.end_date - @order.start_date).to_i %>
+						Number of days: <%= dayCount %></br></br>
+						Your total: <strong>$<%= @order.daily_cost * dayCount %></strong></p>
+					  <%= link_to "Order History", orders_path, class: "btn btn-success btn-lg"%>
+				</div>
 
-			<% @reviews.each do |r| %>
-				<p><%= r.title %></p>
-				<p><%= r.comment %></p>
-			<% end %>
+				<h2>Reviews</h2>
 
-      <%= form_tag reviews_path do %>
-        <%= text_field_tag :title, nil, placeholder: "Enter a title...", class: "entry-field" %></br>
-        <%= text_area_tag :comment, nil, placeholder: "Review goes here...", class: "entry-field"  %></br>
-			  <%= hidden_field_tag :order_id, @order.id %>
-        <%= submit_tag  "Post", class: "btn btn-success btn-lg home-submit" %>
-      <% end %>
+				<% @reviews.each do |r| %>
+					<p><%= r.title %></p>
+					<p><%= r.comment %></p>
+				<% end %>
+
+	      <%= form_tag reviews_path do %>
+	    <div class="form-group">
+	        <%= text_field_tag :title, nil, placeholder: "Enter a title...", class: "form-control" %></br>
+        </div>
+
+	       <div class="form-group">
+	        <%= text_area_tag :comment, nil, placeholder: "Review goes here...", class: "form-control"  %></br>
+				  <%= hidden_field_tag :order_id, @order.id %>
+	        <%= submit_tag  "Post", class: "btn btn-success btn-lg home-submit" %>
+	      <% end %>
+			</div>
+				
 		</div>
-			
 	</div>
 </div>

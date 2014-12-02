@@ -1,17 +1,15 @@
-<div class="container equip-background">
+<div class="container">
   <h1>Inventory</h1>
 
   <% @equipment.each do |e| %>
-    <div class="equip-listing">
-	    
+	<div class="equip-listing">
       <%= image_tag e.avatar.url(:thumb), :class => "equip-thumb" %>
 	    <h2><%= e.name %></h2>
-	    <h3><%= number_to_currency(e.current_daily_cost) %></h3>
+	    <h3><%= e.availability %> <%= number_to_currency(e.current_daily_cost) %></h3>
 	    <p><%= e.description %></p>
-	    <h3><%= e.availability %></h3>
 	    <%= button_to "Edit", edit_equipment_path(e.id), :method => :get, class: "btn" %>
 	    <%= button_to "Remove", equipment_path(e.id), :method => :delete, class: "btn btn-danger" %>
-	    <%= link_to "View", equipment_path(e.id), class: "btn btn-info" %>	    
+	    <%= link_to "View", equipment_path(e.id), class: "btn btn-success" %>	    
     </div>
   <% end %>
 
