@@ -14,9 +14,22 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = current_user.orders.new(params.permit(:start_date, :end_date, :daily_cost, :equipment_id))
+
+    default_start = Date.today.to_s
+    default_end = (Date.today + 7).to_s
+
+    my_daily_cost = params[:daily_cost]
+    my_equipment_id = params[:equipment_id]
+
+    if params[:start_date].blank?
+      order = current_user.orders.new(daily_cost: my_daily_cost, equipment_id: my_equipment_id, start_date: default_start, end_date: default_end)
+    else
+      order = current_user.orders.new(params.permit(:start_date, :end_date, :daily_cost, :equipment_id))
+    end
+
     order.save
     redirect_to order_path(order)  
+
   end
 
 private

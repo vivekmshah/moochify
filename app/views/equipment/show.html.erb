@@ -17,8 +17,8 @@
 				<h1>Reserve this item.</h1>
 				<%= form_tag orders_path do %>
 
-				  <%= date_field_tag :start_date, nil  %>
-				  <%= date_field_tag :end_date, nil  %>
+          <%= date_field_tag :start_date, Date.today  %>
+          <%= date_field_tag :end_date, Date.today+7  %>
 
 				  <%= hidden_field_tag :equipment_id, @equipment.id %>
 				  <%= hidden_field_tag :daily_cost, @equipment.current_daily_cost %>

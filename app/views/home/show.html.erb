@@ -10,8 +10,8 @@
       <%= form_tag results_path do %>
         <%= text_field_tag :name, nil, placeholder: "Enter equipment...", class: "entry-field" %>
         <%= text_field_tag :zip, nil, placeholder: "Zip", class: "entry-field" %>
-        <%= date_field_tag :start_date, nil, class: "entry-field"  %>
-        <%= date_field_tag :end_date, nil, class: "entry-field"  %>
+        <%= date_field_tag :start_date, Date.today, class: "entry-field"  %>
+        <%= date_field_tag :end_date, Date.today+7, class: "entry-field"  %>
         <%= submit_tag  "Search", class: "btn btn-success btn-lg home-submit" %>
       <% end %>
   </div>
@@ -25,8 +25,8 @@
     <div class="thumbnail">
       <img class="thumb-icon" src="/assets/screwdriver3.png">
       <div class="caption">
-        <h3>Work</h3>
-          <p>Want to tackle that DIY project, but don't have the tools? Rent them from your neighbor and avoid that expensive trip to Home Depot.</p>
+        <h2>Work</h2>
+          <h4>Want to tackle that DIY project, but don't have the tools? Rent them from your neighbor and avoid that expensive trip to Home Depot.</h4>
       </div>
     </div>
   </div>
@@ -35,8 +35,8 @@
     <div class="thumbnail">
       <img class="thumb-icon" src="/assets/running31.png">
       <div class="caption">
-        <h3>Play</h3>
-        <p>Thinking about a new hobby? No need to dump a bunch of money into it. Rent gear from your neigbor to give it a try.</p>
+        <h2>Play</h2>
+        <h4>Thinking about a new hobby? No need to dump a bunch of money into it. Rent gear from your neigbor to give it a try.</h4>
       </div>
     </div>
   </div>
@@ -45,8 +45,8 @@
       <div class="thumbnail">
       <img class="thumb-icon" src="/assets/television4.png">
       <div class="caption">
-        <h3>Entertain</h3>
-        <p>Planning an event, save money by renting that projector from you neighbor for an outdoor movie night.</p>
+        <h2>Entertain</h2>
+        <h4>Planning an event, save money by renting that projector from you neighbor for an outdoor movie night.</h4>
       </div>
     </div>
   </div>
