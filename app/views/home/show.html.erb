@@ -10,8 +10,8 @@
       <%= form_tag results_path do %>
         <%= text_field_tag :name, nil, placeholder: "Enter equipment...", class: "entry-field" %>
         <%= text_field_tag :zip, nil, placeholder: "Zip", class: "entry-field" %>
-        <%= date_field_tag :start_date, nil, class: "entry-field"  %>
-        <%= date_field_tag :end_date, nil, class: "entry-field"  %>
+        <%= date_field_tag :start_date, Date.today, class: "entry-field"  %>
+        <%= date_field_tag :end_date, Date.today+7, class: "entry-field"  %>
         <%= submit_tag  "Search", class: "btn btn-success btn-lg home-submit" %>
       <% end %>
   </div>
