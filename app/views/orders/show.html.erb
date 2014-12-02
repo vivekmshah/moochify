@@ -17,10 +17,10 @@
 				<h2>Your order has been processed.</h2>
 				<h1><%= @equipment.name %></h1>
 				<h1>Order Details:</h1>
-				<p>Cost per day: $<%= @order.daily_cost %></br>
+				<p>Cost per day: <%= number_to_currency(@order.daily_cost) %></br>
 					<% dayCount = (@order.end_date - @order.start_date).to_i %>
 					Number of days: <%= dayCount %></br></br>
-					Your total: <strong>$<%= @order.daily_cost * dayCount %></strong></p>
+					Your total: <strong><%= number_to_currency(@order.daily_cost * dayCount) %></strong></p>
 				  <%= link_to "Order History", orders_path, class: "btn btn-success btn-lg"%>
 			</div>
 
