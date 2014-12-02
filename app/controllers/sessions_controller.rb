@@ -16,6 +16,9 @@ class SessionsController < ApplicationController
     end
   end
 
+  # The method below takes the user to the homepage
+  # when they log out
+
   def destroy
     reset_session
     redirect_to home_path

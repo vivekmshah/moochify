@@ -19,6 +19,9 @@ class ResultsController < ApplicationController
 
   end
 
+  # The method is for showing the user the 'search results' page
+  # when they perform a search
+
   def create
   	redirect_to results_path
   end

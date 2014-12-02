@@ -34,6 +34,8 @@ class OrdersController < ApplicationController
 
 private
   
+  # The method below prevents a user from viewing another user's order
+
   def orders_show
     redirect_to home_path if current_user.id != Order.find(params[:id]).user_id
   end

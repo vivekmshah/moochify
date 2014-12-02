@@ -52,6 +52,9 @@ private
     params.require(:user).permit(:first_name, :last_name, :email, :phone, :address_1, :address_2, :city, :state, :zip, :bio, :avatar)
   end
 
+  # The method below makes it so a user can only update
+  # his or her own profile, and no one else's
+
   def user_edits
     redirect_to home_path if current_user != User.find(params[:id])
   end
