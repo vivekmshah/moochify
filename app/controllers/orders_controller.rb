@@ -15,7 +15,6 @@ class OrdersController < ApplicationController
 
   def create
 
-    
     default_start = Date.today.to_s
     default_end = (Date.today + 7).to_s
 
