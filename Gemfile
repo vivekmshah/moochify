@@ -6,7 +6,7 @@ gem 'factory_girl_rails'
 
 gem 'bootstrap-sass'
 
-# gem 'geocoder'
+gem 'geocoder'
 
 gem 'json', '~> 1.8.1'
 
