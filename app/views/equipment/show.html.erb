@@ -2,7 +2,7 @@
 
 <!-- Equipment Specs Row -->
 
-	<div class="row">
+	<div class="row profile-review">
 		<div class="col-md-4">
 			<%= image_tag @equipment.avatar.url(:medium) %>
 		</div>
@@ -31,32 +31,34 @@
 
 	<!-- Reviews Row -->
 
-	<div class="row"> 
-		<div class="col-md-6">
+	<div class="row profile-review"> 
+		<div class="col-md-5">
+			<h1>Owner</h1>
+			<%= image_tag @owner.avatar.url(:thumb) %>
+			<h2><%= @owner.first_name %> <%= @owner.last_name %></h2>
+			<p><%= @owner.bio %></p>
+		</div>
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-5">
 			<h1>Reviews</h1>
 			<% @reviews.each do |r| %>
-				<p><%= r.title %></p>
-				<p><%= r.comment %></p>
+			    <div class="individual-reviews">
+					<p><strong><%= r.title %></strong></p>
+					<p>"<%= r.comment %>"</p>
+			    </div>
 			<% end %>
-		</div>
+		</div>	
 	</div>
 
-<div class="content-wrapper">
-
-	<div id="map-canvas">
-	</div>
-
-<h2><%= @owner.first_name %></h2>
-<p><%= @owner.last_name %></p>
-<p><%= @owner.bio %></p>
-<%= image_tag @owner.avatar.url(:medium) %>
-
-
-</div> <!-- End Container -->
-
-
-
-
+	<div class="row">
+		<div class="col-md-12">
+			<div class="content-wrapper">
+			    <div id="profile-map-canvas">
+	            </div>
+            </div>
+        </div>
+    </div> <!-- End Container -->
 </div>
 
 <script>
@@ -65,7 +67,7 @@
 	var myLat = <%= raw @myLat.to_json %>;
 	var myLng = <%= raw @myLng.to_json %>;
 
-	map = new google.maps.Map(document.getElementById('map-canvas'), {
+	map = new google.maps.Map(document.getElementById('profile-map-canvas'), {
 	  zoom: 13,
 	  center: new google.maps.LatLng(myLat, myLng)
 	});

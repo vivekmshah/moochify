@@ -1,16 +1,9 @@
 <div class="container">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="img-avatar">
-				<%= image_tag @user.avatar.url(:thumb) %><br>
-				<%= @user.first_name %> <%= @user.last_name %>
+	<div class="show-order">
+		<div class="row order-show-row">
+			<div class="col-md-4">		
+				<%= image_tag @equipment.avatar.url(:medium) %>
 			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4	">		
-			<%= image_tag @equipment.avatar.url(:medium) %>
-		</div>
 
 		<div class="col-md-8">
 			<div class="order-confirm">
@@ -24,20 +17,23 @@
 				  <%= link_to "Order History", orders_path, class: "btn btn-success btn-lg"%>
 			</div>
 
-			<h2>Reviews</h2>
+				<% @reviews.each do |r| %>
+					<p><%= r.title %></p>
+					<p><%= r.comment %></p>
+				<% end %>
 
-			<% @reviews.each do |r| %>
-				<p><%= r.title %></p>
-				<p><%= r.comment %></p>
-			<% end %>
+	      <%= form_tag reviews_path do %>
+	    <div class="form-group">
+	        <%= text_field_tag :title, nil, placeholder: "Enter a title...", class: "form-control" %></br>
+        </div>
 
-      <%= form_tag reviews_path do %>
-        <%= text_field_tag :title, nil, placeholder: "Enter a title...", class: "entry-field" %></br>
-        <%= text_area_tag :comment, nil, placeholder: "Review goes here...", class: "entry-field"  %></br>
-			  <%= hidden_field_tag :order_id, @order.id %>
-        <%= submit_tag  "Post", class: "btn btn-success btn-lg home-submit" %>
-      <% end %>
+	       <div class="form-group">
+	        <%= text_area_tag :comment, nil, placeholder: "Review goes here...", class: "form-control"  %></br>
+				  <%= hidden_field_tag :order_id, @order.id %>
+	        <%= submit_tag  "Post", class: "btn btn-success btn-lg home-submit" %>
+	      <% end %>
+			</div>
+				
 		</div>
-			
 	</div>
 </div>

@@ -2,7 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.orders-header {
+	border-bottom: 2px solid gray;
+}
+
 .order-hist {
 	margin: 20px;
 }
 
+.show-order {
+	width: 90%;
+	// background-color: #ffbb37;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+
+.order-show-row {
+	margin-top: 30px;
+}
