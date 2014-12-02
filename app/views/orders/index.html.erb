@@ -16,7 +16,7 @@
     <div class="order-hist">
   		<div class="col-md-4 col-sm-4">
     		<% equipment = Equipment.find(o.equipment_id) %>
-        <strong><p><%= equipment.name %></p></strong>
+        <strong><p><%= link_to "#{equipment.name}", equipment_path(equipment) %></p></strong>
         <%= image_tag equipment.avatar.url(:thumb) %>
   	  </div>
       <div class="col-md-4 col-sm-4">
@@ -26,6 +26,7 @@
   	    <% dayCount = (o.end_date - o.start_date).to_i %>
   	    <p><strong>Number of days:</strong> <%= dayCount %></p>
   	    <p><strong>Total cost:</strong> <%= o.daily_cost * dayCount %></p>
+        <%= link_to "View Order", order_path(o) %>
   	  </div>
       <div class="col-md-4 col-sm-4">
     		<% owner = User.find(equipment.user_id) %>

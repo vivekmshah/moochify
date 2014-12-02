@@ -67,6 +67,19 @@ class EquipmentController < ApplicationController
 
   def show
     @equipment = Equipment.find(params[:id])
+    @reviews = Review.find_by_sql([
+      'SELECT reviews.title, reviews.comment ' +
+      'FROM reviews ' +
+      'INNER JOIN orders ' +
+      'ON reviews.order_id = orders.id ' +
+      'INNER JOIN equipment ' +
+      'ON orders.equipment_id = equipment.id ' +
+      'WHERE equipment.id = ?',
+      "#{params[:id]}"
+      ])
+    @myLat = User.find(@equipment.user_id).latitude
+    @myLng = User.find(@equipment.user_id).longitude
+    @owner = User.find(@equipment.user_id)
   end
 
 private

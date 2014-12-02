@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @user = User.find(@order.user_id)
     @equipment = Equipment.find(@order.equipment_id)
+    @reviews = Review.where(order_id: params[:id])
   end
 
   def create

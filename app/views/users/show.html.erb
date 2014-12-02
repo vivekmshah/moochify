@@ -10,22 +10,12 @@
 
 	  <div class="user-reviews">
 	    <h1>Reviews</h1>
-      <div class="review">
-        <h2>Review Title</h2>
-        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
-      </div>
-      <div class="review">
-        <h2>Review Title</h2>
-        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
-      </div>
-      <div class="review">
-        <h2>Review Title</h2>
-        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
-      </div>
-      <div class="review">
-        <h2>Review Title</h2>
-        <p>I borrowed a lawn mower from Walter and it was a great experience.  He was about to take his RV out for a week-long camping trip in the desert, so he even let me hold onto it for a couple of extra days at no charge.</p>
-      </div>
+      <% @reviews.each do |r| %>
+        <div class="review">
+          <h2><%= r.title %></h2>
+          <p><%= r.comment %></p>
+        </div>
+      <% end %>
 	  </div>
   </div>
 </div>

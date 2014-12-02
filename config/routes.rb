@@ -1,5 +1,6 @@
 Moochify::Application.routes.draw do
 
+  get "reviews/create"
   root 'home#show', as: :home
 
   get 'signup', to: 'users#new', as: 'signup'
@@ -9,6 +10,7 @@ Moochify::Application.routes.draw do
   resources :users, :except => [:index]
   resources :equipment
   resources :orders, :only => [:index, :show, :create]
+  resources :reviews
 
   resources :sessions
   resources :results, :except => [:create] 
