@@ -7,8 +7,10 @@
                 <% @results.each do |r| %>
                     <div class="result">   
                         <%= image_tag r.avatar.url(:thumb), :class => "equip-thumb" %>
-                        <%= link_to "#{r.name}", equipment_path(r) %> 
+                        <h4><%= link_to "#{r.name}", equipment_path(r) %> </h4>
                         <div class="desc"><%= r.description %></div>
+                        <h4><%= r.current_daily_cost %></h4>
+                        <p><%= r.availability %></p>
                     </div>
                 <% end %>
             <% end %> 
@@ -46,7 +48,7 @@ function initialize() {
         myLng = mapCenter.B;
 
         map = new google.maps.Map(document.getElementById('map-canvas'), {
-            zoom: 13,
+            zoom: 14,
             center: new google.maps.LatLng(myLat, myLng)
         });
 
