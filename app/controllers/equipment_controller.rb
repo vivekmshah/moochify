@@ -88,6 +88,8 @@ private
     params.require(:equipment).permit(:name, :current_daily_cost, :description, :availability, :avatar)
   end
 
+  # The method below prevents a user from editing another user's equipment
+
   def equipment_edits
     redirect_to home_path if current_user.id != Equipment.find(params[:id]).user_id
   end

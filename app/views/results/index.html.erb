@@ -2,19 +2,19 @@
 	<div id="map-canvas">
 	</div>
 	<div id="right-container">
-        <div class="search-results">
-            <% if @results %>
-                <% @results.each do |r| %>
-                    <div class="result">   
-                        <%= image_tag r.avatar.url(:thumb), :class => "equip-thumb" %>
-                        <h4><%= link_to "#{r.name}", equipment_path(r) %> </h4>
-                        <div class="desc"><%= r.description %></div>
-                        <h4><%= number_to_currency(r.current_daily_cost) %></h4>
-                        <p><%= r.availability %></p>
-                    </div>
-                <% end %>
-            <% end %> 
-        </div>
+    <div class="search-results">
+      <% if @results %>
+        <% @results.each do |r| %>
+          <div class="result">   
+            <%= image_tag r.avatar.url(:thumb), :class => "equip-thumb" %>
+              <h4><%= link_to "#{r.name}", equipment_path(r) %> </h4>
+              <div class="desc"><%= r.description %></div>
+              <h4><%= number_to_currency(r.current_daily_cost) %></h4>
+              <p><%= r.availability %></p>
+          </div>
+        <% end %>
+      <% end %> 
+    </div>
 	</div>
 </div>
 

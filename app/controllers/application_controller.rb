@@ -11,8 +11,7 @@ class ApplicationController < ActionController::Base
 
 private
 
-
-# protected
+  # Below is for the basic authorization that covers the whole app
 
   def authorize
     redirect_to login_path, alert: "Not authorized" if current_user.nil?
