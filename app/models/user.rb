@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   geocoded_by :get_address
-  # after_validation :geocode
+  after_validation :geocode
 
   def get_address
     [address_1, address_2, city, state, zip].join(' ')
