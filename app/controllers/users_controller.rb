@@ -34,7 +34,19 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @reviews = Review.all
+    # @reviews = Review.find_by_sql([
+    #   'SELECT reviews.title, reviews.comment ' +
+    #   'FROM reviews ' +
+    #   'INNER JOIN orders ' +
+    #   'ON reviews.order_id = orders.id ' +
+    #   'INNER JOIN equipment ' +
+    #   'ON orders.equipment_id = equipment.id ' +
+    #   'INNER JOIN users ' +
+    #   'ON equipment.user_id = user.id ' +
+    #   'WHERE user.id = ?',
+    #   "#{params[:id]}"
+    #   ])
   end
 
 private
